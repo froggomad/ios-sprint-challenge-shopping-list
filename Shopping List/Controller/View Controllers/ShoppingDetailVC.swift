@@ -20,14 +20,15 @@ class ShoppingDetailVC: UIViewController {
     
     
     var items: [ShoppingItem]?
-    let notificationCenter = UNUserNotificationCenter.current()
+    let notification = Notifications()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews() //using didSet pattern, label is nil
         nameTextField.delegate = self
         addressTextField.delegate = self
-        notificationCenter.delegate = self
+        notification.notificationCenter.delegate = self
+        notification.notificationRequest()
     }
     
     func setupViews() {
@@ -45,8 +46,7 @@ class ShoppingDetailVC: UIViewController {
             Alert.show(title: "Oops!", message: "Please enter your address so we can deliver you item(s)!", vc: self)
         }
         Alert.show(title: "Delivery Scheduled!", message: "Your Delivery is scheduled for 15 seconds from now. Hold tight!", vc: self)
-        let notifications = Notifications()
-        notifications.triggerNotification(onDate: Date(timeIntervalSinceNow: 15))
+        notification.triggerNotification(onDate: Date(timeIntervalSinceNow: 15))
     }
 }
 
