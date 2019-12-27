@@ -10,5 +10,15 @@ import Foundation
 
 class ShoppingController {
     private let itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
+    var shoppingItems: [ShoppingItem] = []
     
+    func makeShoppingList() {
+        //loadFromPersistentStore()
+        if shoppingItems.count == 0 {
+            for name in itemNames {
+                shoppingItems.append(ShoppingItem(name: name))
+            }
+        }
+        //saveToPersistentStore()
+    }
 }

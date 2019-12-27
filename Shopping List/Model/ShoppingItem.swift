@@ -10,5 +10,5 @@ import Foundation
 
 struct ShoppingItem: Equatable, Codable {
     var name: String
-    var wasPicked: Bool
+    var wasPicked: Bool = false
 }
