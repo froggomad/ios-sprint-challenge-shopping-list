@@ -17,6 +17,7 @@
 		B932919823B67143002D633A /* ShoppingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932919723B67143002D633A /* ShoppingItemCell.swift */; };
 		B932919A23B67912002D633A /* ShoppingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932919923B67912002D633A /* ShoppingDetailVC.swift */; };
 		B932919C23B67F37002D633A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932919B23B67F37002D633A /* Alert.swift */; };
+		B932919F23B68454002D633A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932919E23B68454002D633A /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B932919723B67143002D633A /* ShoppingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCell.swift; sourceTree = "<group>"; };
 		B932919923B67912002D633A /* ShoppingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDetailVC.swift; sourceTree = "<group>"; };
 		B932919B23B67F37002D633A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B932919E23B68454002D633A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +132,18 @@
 			isa = PBXGroup;
 			children = (
 				B932919223B67087002D633A /* ShoppingItem.swift */,
-				B932919B23B67F37002D633A /* Alert.swift */,
+				B932919D23B6843F002D633A /* Helper Classes */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B932919D23B6843F002D633A /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B932919B23B67F37002D633A /* Alert.swift */,
+				B932919E23B68454002D633A /* Notifications.swift */,
+			);
+			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B932919F23B68454002D633A /* Notifications.swift in Sources */,
 				B932919823B67143002D633A /* ShoppingItemCell.swift in Sources */,
 				B932919623B670B9002D633A /* Shopping Controller.swift in Sources */,
 				B932919323B67087002D633A /* ShoppingItem.swift in Sources */,

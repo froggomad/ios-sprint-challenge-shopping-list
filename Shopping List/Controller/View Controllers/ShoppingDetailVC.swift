@@ -20,12 +20,14 @@ class ShoppingDetailVC: UIViewController {
     
     
     var items: [ShoppingItem]?
-        
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews() //using didSet pattern, label is nil
         nameTextField.delegate = self
         addressTextField.delegate = self
+        notificationCenter.delegate = self
     }
     
     func setupViews() {
@@ -43,6 +45,8 @@ class ShoppingDetailVC: UIViewController {
             Alert.show(title: "Oops!", message: "Please enter your address so we can deliver you item(s)!", vc: self)
         }
         Alert.show(title: "Delivery Scheduled!", message: "Your Delivery is scheduled for 15 seconds from now. Hold tight!", vc: self)
+        let notifications = Notifications()
+        notifications.triggerNotification(onDate: Date(timeIntervalSinceNow: 15))
     }
 }
 
@@ -62,4 +66,15 @@ extension ShoppingDetailVC: UITextFieldDelegate {
         }
         return false
     }
+}
+
+extension ShoppingDetailVC: UNUserNotificationCenterDelegate {
+    
+    //for displaying notification when app is in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        //If you don't want to show notification when app is open, do something here else and make a return here.
+        //Even if you don't implement this delegate method, you will not see the notification on the specified controller. So, you have to implement this delegate and make sure the below line executes. i.e. completionHandler.
+        completionHandler([.alert, .badge, .sound])
+    }
+    
 }
