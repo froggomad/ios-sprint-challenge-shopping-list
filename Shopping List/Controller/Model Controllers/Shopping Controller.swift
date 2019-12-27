@@ -9,7 +9,7 @@
 import Foundation
 
 class ShoppingController {
-    private let itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
+    let itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
     var shoppingItems: [ShoppingItem] = []
     
     func makeShoppingList() {

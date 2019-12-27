@@ -45,7 +45,9 @@ class ShoppingDetailVC: UIViewController {
         if addressTextField.text == "" {
             Alert.show(title: "Oops!", message: "Please enter your address so we can deliver you item(s)!", vc: self)
         }
-        Alert.show(title: "Delivery Scheduled!", message: "Your Delivery is scheduled for 15 seconds from now. Hold tight!", vc: self)
+        guard let name = nameTextField.text,
+              let address = addressTextField.text else {return}
+        Alert.show(title: "Delivery Scheduled!", message: "\(name), your Delivery is scheduled to arrive at \(address) 15 seconds from now. Hold tight!", vc: self)
         notification.triggerNotification(onDate: Date(timeIntervalSinceNow: 15))
     }
 }

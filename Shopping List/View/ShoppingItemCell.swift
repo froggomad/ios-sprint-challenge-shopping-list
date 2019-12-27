@@ -12,7 +12,8 @@ class ShoppingItemCell: UICollectionViewCell {
     @IBOutlet weak var addedLbl: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
-    
+        
+    var shoppingController: ShoppingController?
     var item: ShoppingItem? {
         didSet {
             updateViews()
@@ -21,7 +22,12 @@ class ShoppingItemCell: UICollectionViewCell {
     
     func updateViews() {
         //item is force unwrapped here because this isn't being called until didSet (item has a value)
-        imageView.image = UIImage(named: item!.name)
+        if let shoppingController = shoppingController {
+            if shoppingController.itemNames.contains(item!.name) {
+                imageView.image = UIImage(named: item!.name)
+            }
+        }
+        
         self.nameLbl.text = item!.name
         if item!.wasPicked {
             addedLbl.text = "Added"

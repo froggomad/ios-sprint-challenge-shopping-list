@@ -60,6 +60,7 @@ extension ListVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShoppingItemCell", for: indexPath) as? ShoppingItemCell else {return UICollectionViewCell()}
+        cell.shoppingController = shoppingController
         cell.item = shoppingController?.shoppingItems[indexPath.item]
         return cell
     }

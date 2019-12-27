@@ -9,6 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="G6h-rR-9DE">
+            <objects>
+                <viewController id="a2H-x3-3Xn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKJ-iY-3JO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fiu-V5-pSd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Item" id="flB-b0-l3C">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="zV2-vH-3IV"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="P4l-4Z-2Nw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNQ-9q-U7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="-526"/>
+        </scene>
         <!--Shopping List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -87,6 +113,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Shopping List" largeTitleDisplayMode="always" id="CE2-8u-UQK">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="add" id="NoG-hW-qr1">
+                            <connections>
+                                <segue destination="a2H-x3-3Xn" kind="presentation" modalPresentationStyle="fullScreen" id="TMs-BA-JSG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="61d-uG-4GI">
                             <connections>
                                 <segue destination="R32-Kh-a3h" kind="show" identifier="ListDetailSegue" id="x7x-qe-ReR"/>
@@ -131,7 +162,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIs-t0-6g2">
                                         <rect key="frame" x="0.0" y="268" width="374" height="30"/>
-                                        <state key="normal" title="Deliver my items!"/>
+                                        <state key="normal" title="Submit Order"/>
                                         <connections>
                                             <action selector="deliveryBtnTapped:" destination="R32-Kh-a3h" eventType="touchUpInside" id="WcU-J7-D2Z"/>
                                         </connections>
